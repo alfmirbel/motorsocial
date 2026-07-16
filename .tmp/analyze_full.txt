@@ -1,0 +1,140 @@
+Analyzing motorsocial...                                        
+
+warning • Unused import: 'dart:convert' • lib/activity/data_models/activity_contract.dart:1:8 • unused_import
+warning • Unused import: '../data_models/activity_contract.dart' • lib/activity/engine/activity_engine.dart:3:8 • unused_import
+  error • Undefined name 'feedProvider' • lib/activity/engine/activity_engine.dart:12:14 • undefined_identifier
+   info • Use 'const' with the constructor to improve performance • lib/activity/pages/conversation_page.dart:30:11 • prefer_const_constructors
+  error • The name 'ConversationState' isn't a type, so it can't be used as a type argument • lib/activity/providers/conversation_notifier.dart:6:45 • non_type_as_type_argument
+  error • Undefined class 'ConversationState' • lib/activity/providers/conversation_notifier.dart:10:3 • undefined_class
+  error • The name 'ConversationState' isn't a class • lib/activity/providers/conversation_notifier.dart:10:38 • creation_with_non_type
+  error • The name 'ConversationState' isn't a type, so it can't be used as a type argument • lib/activity/providers/conversation_notifier.dart:58:69 • non_type_as_type_argument
+warning • Unused import: '../data_models/social_object.dart' • lib/catalog/engine/catalog_engine.dart:3:8 • unused_import
+warning • Unused import: '../data_models/social_object_page.dart' • lib/catalog/engine/catalog_engine.dart:4:8 • unused_import
+  error • Undefined name 'catalogProvider' • lib/catalog/engine/catalog_engine.dart:12:14 • undefined_identifier
+  error • The name 'SocialObjectPage' isn't a type, so it can't be used as a type argument • lib/catalog/providers/export_notifier.dart:6:10 • non_type_as_type_argument
+  error • The method 'getById' isn't defined for the type 'CatalogRepository' • lib/catalog/providers/object_detail_notifier.dart:19:47 • undefined_method
+warning • Unused import: 'package:flutter_riverpod/flutter_riverpod.dart' • lib/catalog/repositories/catalog_repository.dart:1:8 • unused_import
+  error • The name 'SocialObjectPage' isn't a type, so it can't be used as a type argument • lib/catalog/repositories/catalog_repository.dart:6:10 • non_type_as_type_argument
+  error • Undefined name 'themeProvider' • lib/design/engine/design_engine.dart:12:14 • undefined_identifier
+  error • Undefined class 'ThemeState' • lib/design/engine/design_engine.dart:15:43 • undefined_class
+warning • Unused import: 'package:flutter/material.dart' • lib/design/providers/theme_notifier.dart:2:8 • unused_import
+  error • The argument type '_ThemeNotifier Function(dynamic)' can't be assigned to the parameter type '_ThemeNotifier Function()' • lib/design/providers/theme_notifier.dart:46:68 • argument_type_not_assignable
+warning • Unused import: 'package:flutter/material.dart' • lib/identity/data_models/auth_state.dart:1:8 • unused_import
+  error • Undefined class 'AuthState' • lib/identity/data_models/social_identity_contract.dart:43:9 • undefined_class
+warning • Unused import: 'package:flutter/material.dart' • lib/identity/data_models/social_user.dart:1:8 • unused_import
+  error • The name 'LocalSessionRepository' is defined in the libraries 'package:motorsocial/identity/repositories/session_repository.dart' and 'package:motorsocial/identity/repositories/local_session_repository.dart' • lib/identity/identity.dart:7:8 • ambiguous_export
+warning • Unused import: '../repositories/auth_notifier.dart' • lib/identity/pages/login_page.dart:3:8 • unused_import
+warning • Unused import: '../repositories/auth_notifier.dart' • lib/identity/pages/password_recovery_page.dart:3:8 • unused_import
+warning • Unused import: '../repositories/auth_notifier.dart' • lib/identity/pages/register_page.dart:3:8 • unused_import
+  error • The name 'LocalSessionRepository' isn't a class • lib/identity/repositories/auth_notifier.dart:12:53 • creation_with_non_type
+  error • The name 'LocalSessionRepository' isn't a class • lib/identity/repositories/auth_notifier.dart:17:53 • creation_with_non_type
+  error • The name 'LocalSessionRepository' isn't a class • lib/identity/repositories/auth_notifier.dart:22:53 • creation_with_non_type
+  error • The name 'LocalSessionRepository' isn't a class • lib/identity/repositories/auth_notifier.dart:27:38 • creation_with_non_type
+warning • Unused import: 'package:flutter_riverpod/flutter_riverpod.dart' • lib/identity/repositories/auth_repository.dart:1:8 • unused_import
+  error • The name 'SessionData' isn't a class • lib/identity/repositories/auth_repository.dart:20:41 • creation_with_non_type
+   info • Use 'const' with the constructor to improve performance • lib/identity/repositories/auth_repository.dart:21:12 • prefer_const_constructors
+warning • Unused import: 'package:flutter_riverpod/flutter_riverpod.dart' • lib/identity/repositories/local_session_repository.dart:1:8 • unused_import
+warning • Unused import: 'package:flutter_riverpod/flutter_riverpod.dart' • lib/identity/repositories/session_repository.dart:1:8 • unused_import
+  error • Target of URI doesn't exist: '../data_models/social_identity_contract.dart' • lib/identity/social_identity_engine.dart:2:8 • uri_does_not_exist
+  error • Target of URI doesn't exist: '../repositories/auth_notifier.dart' • lib/identity/social_identity_engine.dart:3:8 • uri_does_not_exist
+  error • Undefined name 'authNotifierProvider' • lib/identity/social_identity_engine.dart:9:14 • undefined_identifier
+  error • Target of URI doesn't exist: 'engine/location_engine.dart' • lib/location/location.dart:7:8 • uri_does_not_exist
+warning • Unused import: '../data_models/location_contract.dart' • lib/location/pages/locality_picker_page.dart:4:8 • unused_import
+warning • Unused import: '../providers/location_notifier.dart' • lib/location/pages/locality_picker_page.dart:5:8 • unused_import
+  error • Undefined name 'locationNotifier' • lib/location/pages/locality_picker_page.dart:12:34 • undefined_identifier
+warning • Unused import: '../../identity/repositories/auth_notifier.dart' • lib/location/providers/location_notifier.dart:3:8 • unused_import
+  error • The name 'LocationState' isn't a type, so it can't be used as a type argument • lib/location/providers/location_notifier.dart:5:41 • non_type_as_type_argument
+  error • Undefined class 'LocationState' • lib/location/providers/location_notifier.dart:7:3 • undefined_class
+  error • The name 'LocationState' isn't a class • lib/location/providers/location_notifier.dart:7:34 • creation_with_non_type
+  error • The name 'LocationState' isn't a type, so it can't be used as a type argument • lib/location/providers/location_notifier.dart:10:61 • non_type_as_type_argument
+  error • The argument type 'LocationNotifier Function(dynamic)' can't be assigned to the parameter type 'LocationNotifier Function()' • lib/location/providers/location_notifier.dart:10:76 • argument_type_not_assignable
+warning • Unused import: 'package:flutter_riverpod/flutter_riverpod.dart' • lib/location/repositories/geolocation_repository.dart:1:8 • unused_import
+warning • Unused import: 'package:flutter_riverpod/flutter_riverpod.dart' • lib/location/repositories/postal_code_repository.dart:3:8 • unused_import
+warning • Unused import: 'activity/activity.dart' • lib/main.dart:3:8 • unused_import
+warning • Unused import: 'catalog/catalog.dart' • lib/main.dart:4:8 • unused_import
+warning • Unused import: 'design/design.dart' • lib/main.dart:5:8 • unused_import
+warning • Unused import: 'identity/identity.dart' • lib/main.dart:6:8 • unused_import
+warning • Unused import: 'location/location.dart' • lib/main.dart:7:8 • unused_import
+warning • Unused import: 'media/media.dart' • lib/main.dart:8:8 • unused_import
+warning • Unused import: 'navigation/navigation.dart' • lib/main.dart:9:8 • unused_import
+warning • Unused import: 'resilience/resilience.dart' • lib/main.dart:10:8 • unused_import
+warning • Unused import: 'security/security.dart' • lib/main.dart:11:8 • unused_import
+warning • Unused import: 'social_graph/social_graph.dart' • lib/main.dart:12:8 • unused_import
+warning • Unused import: 'package:flutter/material.dart' • lib/media/data_models/media_contract.dart:1:8 • unused_import
+warning • Unused import: 'package:flutter/material.dart' • lib/media/data_models/social_media_asset.dart:1:8 • unused_import
+warning • Unused import: 'package:flutter/material.dart' • lib/media/engine/media_engine.dart:1:8 • unused_import
+warning • Unused import: '../data_models/media_contract.dart' • lib/media/engine/media_engine.dart:4:8 • unused_import
+  error • Undefined class 'MediaRepository' • lib/media/engine/media_engine.dart:8:9 • undefined_class
+  error • The name 'SocialMediaAsset' is defined in the libraries 'package:motorsocial/media/data_models/social_media_asset.dart' and 'package:motorsocial/media/pages/media_selector_page.dart' • lib/media/media.dart:7:8 • ambiguous_export
+  error • The name 'MediaSlider' is defined in the libraries 'package:motorsocial/media/widgets/media_thumb_grid.dart' and 'package:motorsocial/media/widgets/media_slider.dart' • lib/media/media.dart:11:8 • ambiguous_export
+warning • Unused import: '../data_models/social_media_asset.dart' • lib/media/pages/media_slideshow_page.dart:4:8 • unused_import
+warning • Unused import: '../data_models/media.dart' • lib/media/providers/album_order_notifier.dart:3:8 • unused_import
+  error • The name 'AlbumOrderState' isn't a type, so it can't be used as a type argument • lib/media/providers/album_order_notifier.dart:5:43 • non_type_as_type_argument
+  error • Undefined class 'AlbumOrderState' • lib/media/providers/album_order_notifier.dart:7:3 • undefined_class
+  error • The name 'AlbumOrderState' isn't a class • lib/media/providers/album_order_notifier.dart:7:36 • creation_with_non_type
+  error • The name 'AlbumOrderState' isn't a type, so it can't be used as a type argument • lib/media/providers/album_order_notifier.dart:10:65 • non_type_as_type_argument
+  error • The argument type 'AlbumOrderNotifier Function(dynamic)' can't be assigned to the parameter type 'AlbumOrderNotifier Function()' • lib/media/providers/album_order_notifier.dart:10:82 • argument_type_not_assignable
+  error • The argument type 'MediaLibraryNotifier Function(dynamic)' can't be assigned to the parameter type 'MediaLibraryNotifier Function()' • lib/media/providers/media_library_notifier.dart:28:88 • argument_type_not_assignable
+warning • Unused import: 'package:flutter/material.dart' • lib/navigation/providers/tab_menu_notifier.dart:1:8 • unused_import
+  error • Undefined class 'NavigationContract' • lib/navigation/shell/social_scaffold.dart:4:9 • undefined_class
+warning • Unused import: 'package:flutter/material.dart' • lib/resilience/engine/resilience_engine.dart:1:8 • unused_import
+  error • The method 'initialize' isn't defined for the type 'ConnectionNotifier' • lib/resilience/engine/resilience_engine.dart:11:43 • undefined_method
+warning • Unused import: 'package:flutter/material.dart' • lib/resilience/providers/connection_notifier.dart:1:8 • unused_import
+  error • The name 'ConnectionStatus' isn't a type, so it can't be used as a type argument • lib/resilience/providers/connection_notifier.dart:4:43 • non_type_as_type_argument
+  error • Undefined class 'ConnectionStatus' • lib/resilience/providers/connection_notifier.dart:6:3 • undefined_class
+  error • The name 'ConnectionStatus' isn't a class • lib/resilience/providers/connection_notifier.dart:6:37 • creation_with_non_type
+  error • The name 'ConnectionStatus' isn't a type, so it can't be used as a type argument • lib/resilience/providers/connection_notifier.dart:9:65 • non_type_as_type_argument
+  error • The argument type 'ConnectionNotifier Function(dynamic)' can't be assigned to the parameter type 'ConnectionNotifier Function()' • lib/resilience/providers/connection_notifier.dart:9:83 • argument_type_not_assignable
+  error • Target of URI doesn't exist: '../data_models/platform_info.dart' • lib/resilience/providers/platform_notifier.dart:3:8 • uri_does_not_exist
+  error • The name 'PlatformInfo' isn't a type, so it can't be used as a type argument • lib/resilience/providers/platform_notifier.dart:5:41 • non_type_as_type_argument
+  error • Undefined class 'PlatformInfo' • lib/resilience/providers/platform_notifier.dart:7:3 • undefined_class
+  error • The name 'PlatformInfo' isn't a class • lib/resilience/providers/platform_notifier.dart:7:33 • creation_with_non_type
+  error • The name 'PlatformInfo' isn't a type, so it can't be used as a type argument • lib/resilience/providers/platform_notifier.dart:10:61 • non_type_as_type_argument
+  error • The argument type 'PlatformNotifier Function(dynamic)' can't be assigned to the parameter type 'PlatformNotifier Function()' • lib/resilience/providers/platform_notifier.dart:10:75 • argument_type_not_assignable
+  error • The argument type 'SyncNotifier Function(dynamic)' can't be assigned to the parameter type 'SyncNotifier Function()' • lib/resilience/providers/sync_notifier.dart:3:64 • argument_type_not_assignable
+warning • Unused import: '../data_models/connection_status.dart' • lib/resilience/repositories/connectivity_repository.dart:3:8 • unused_import
+  error • The method 'any' isn't defined for the type 'ConnectivityResult' • lib/resilience/repositories/connectivity_repository.dart:8:19 • undefined_method
+  error • The method 'any' isn't defined for the type 'ConnectivityResult' • lib/resilience/repositories/connectivity_repository.dart:18:19 • undefined_method
+  error • Target of URI doesn't exist: '../data_models/platform_info.dart' • lib/resilience/repositories/platform_repository.dart:3:8 • uri_does_not_exist
+  error • The name 'PlatformInfo' isn't a type, so it can't be used as a type argument • lib/resilience/repositories/platform_repository.dart:6:10 • non_type_as_type_argument
+  error • The name 'PlatformInfo' isn't a type, so it can't be used as a type argument • lib/resilience/repositories/platform_repository.dart:13:10 • non_type_as_type_argument
+  error • The method 'PlatformInfo' isn't defined for the type 'PlatformRepositoryImpl' • lib/resilience/repositories/platform_repository.dart:25:12 • undefined_method
+  error • Target of URI doesn't exist: 'data_models/platform_info.dart' • lib/resilience/resilience.dart:4:8 • uri_does_not_exist
+  error • Target of URI doesn't exist: 'data_models/sync_state.dart' • lib/resilience/resilience.dart:5:8 • uri_does_not_exist
+  error • The name 'SyncState' is defined in the libraries 'package:motorsocial/resilience/data_models/connection_status.dart' and 'package:motorsocial/resilience/providers/sync_notifier.dart' • lib/resilience/resilience.dart:11:8 • ambiguous_export
+   info • The imported package 'riverpod_annotation' isn't a dependency of the importing package • lib/security/data_models/rate_limit_state.dart:1:8 • depend_on_referenced_packages
+  error • Target of URI doesn't exist: 'package:riverpod_annotation/riverpod_annotation.dart' • lib/security/data_models/rate_limit_state.dart:1:8 • uri_does_not_exist
+  error • The included part 'package:motorsocial/security/data_models/rate_limit_state.dart' must have a part-of directive • lib/security/data_models/rate_limit_state.dart:3:6 • part_of_non_part
+  error • Undefined name 'riverpod' used as an annotation • lib/security/data_models/rate_limit_state.dart:14:1 • undefined_annotation
+  error • Classes can only extend other classes • lib/security/data_models/rate_limit_state.dart:15:33 • extends_non_class
+warning • The method doesn't override an inherited method • lib/security/data_models/rate_limit_state.dart:17:18 • override_on_non_overriding_member
+warning • Unused import: 'package:flutter/material.dart' • lib/security/engine/security_engine.dart:1:8 • unused_import
+  error • The argument type 'RateLimitNotifier Function(dynamic)' can't be assigned to the parameter type 'RateLimitNotifier Function()' • lib/security/providers/rate_limit_provider.dart:10:79 • argument_type_not_assignable
+  error • The argument type 'SecurityNotifier Function(dynamic)' can't be assigned to the parameter type 'SecurityNotifier Function()' • lib/security/providers/security_notifier.dart:29:76 • argument_type_not_assignable
+  error • The name 'RateLimitNotifier' is defined in the libraries 'package:motorsocial/security/data_models/rate_limit_state.dart' and 'package:motorsocial/security/providers/rate_limit_provider.dart' • lib/security/security.dart:2:8 • ambiguous_export
+warning • Unused import: '../data_models/social_relationship.dart' • lib/social_graph/data_models/invitation.dart:1:8 • unused_import
+warning • Unused import: '../data_models/social_relationship.dart' • lib/social_graph/engine/social_graph_engine.dart:3:8 • unused_import
+warning • Unused import: '../repositories/social_graph_repository.dart' • lib/social_graph/engine/social_graph_engine.dart:4:8 • unused_import
+warning • Unused import: '../providers/social_query.dart' • lib/social_graph/engine/social_graph_engine.dart:5:8 • unused_import
+warning • Unused import: '../data_models/social_relationship.dart' • lib/social_graph/pages/contacts_page.dart:4:8 • unused_import
+warning • Unused import: '../providers/social_query.dart' • lib/social_graph/pages/contacts_page.dart:5:8 • unused_import
+warning • Unused import: 'dart:convert' • lib/social_graph/pages/group_pages.dart:1:8 • unused_import
+warning • Unused import: '../data_models/invitation.dart' • lib/social_graph/pages/group_pages.dart:5:8 • unused_import
+warning • Unused import: '../data_models/social_group.dart' • lib/social_graph/pages/group_pages.dart:6:8 • unused_import
+warning • Unused import: '../data_models/social_relationship.dart' • lib/social_graph/pages/group_pages.dart:7:8 • unused_import
+  error • Target of URI doesn't exist: '../data_models/social_query.dart' • lib/social_graph/providers/group_notifier.dart:2:8 • uri_does_not_exist
+warning • Unused import: '../data_models/social_group.dart' • lib/social_graph/providers/group_notifier.dart:3:8 • unused_import
+  error • The name 'GroupState' isn't a type, so it can't be used as a type argument • lib/social_graph/providers/group_notifier.dart:6:38 • non_type_as_type_argument
+  error • Undefined class 'GroupState' • lib/social_graph/providers/group_notifier.dart:10:3 • undefined_class
+  error • The name 'GroupState' isn't a class • lib/social_graph/providers/group_notifier.dart:10:31 • creation_with_non_type
+  error • Undefined class 'SocialQuery' • lib/social_graph/providers/group_notifier.dart:16:27 • undefined_class
+  error • The name 'GroupState' isn't a type, so it can't be used as a type argument • lib/social_graph/providers/group_notifier.dart:27:55 • non_type_as_type_argument
+  error • The argument type 'GroupNotifier Function(dynamic)' can't be assigned to the parameter type 'GroupNotifier Function()' • lib/social_graph/providers/group_notifier.dart:27:67 • argument_type_not_assignable
+warning • Unused import: '../data_models/invitation.dart' • lib/social_graph/providers/invitation_notifier.dart:3:8 • unused_import
+  error • The name 'InvitationState' isn't a type, so it can't be used as a type argument • lib/social_graph/providers/invitation_notifier.dart:5:43 • non_type_as_type_argument
+  error • Undefined class 'InvitationState' • lib/social_graph/providers/invitation_notifier.dart:7:3 • undefined_class
+  error • The name 'InvitationState' isn't a class • lib/social_graph/providers/invitation_notifier.dart:7:36 • creation_with_non_type
+  error • The name 'InvitationState' isn't a type, so it can't be used as a type argument • lib/social_graph/providers/invitation_notifier.dart:10:65 • non_type_as_type_argument
+  error • The argument type 'InvitationNotifier Function(dynamic)' can't be assigned to the parameter type 'InvitationNotifier Function()' • lib/social_graph/providers/invitation_notifier.dart:10:82 • argument_type_not_assignable
+
+136 issues found. (ran in 6.2s)
