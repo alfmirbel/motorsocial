@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '/activity/data_models/activity_contract.dart';
+import 'package:pruebamotorsocial/motorsocial/activity/data_models/activity_contract.dart';
 
 class SocialWidgets {
   final SocialActivity activity;
