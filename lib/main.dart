@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'navigation/shell/social_scaffold.dart';
+import 'package:pruebamotorsocial/motorsocial/navigation/navigation.dart';
+import 'package:pruebamotorsocial/core/app_shell.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,16 +24,17 @@ class MotorSocialApp extends ConsumerWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF415AA9), brightness: Brightness.dark),
         useMaterial3: true,
       ),
-      home: const SocialScaffold(body: AppEntry()),
+      initialRoute: '/catalog',
+      routes: {
+        '/catalog': (_) => const SocialScaffold(body: CatalogPage()),
+        '/home': (_) => const SocialScaffold(body: HomePage()),
+        '/feed': (_) => const SocialScaffold(body: FeedPage()),
+        '/chat': (_) => const SocialScaffold(body: ChatPage()),
+        '/account': (_) => const SocialScaffold(body: AccountPage()),
+        '/profile': (_) => const SocialScaffold(body: ProfilePage()),
+        '/login': (_) => const LoginPage(),
+      },
+      onGenerateRoute: AppRouter.routeFor,
     );
-  }
-}
-
-class AppEntry extends ConsumerWidget {
-  const AppEntry({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return const Scaffold(body: Center(child: Text('Rama limpia lista para integrar')));
   }
 }
