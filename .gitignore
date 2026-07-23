@@ -1,27 +1,31 @@
+# OS / IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+Desktop.ini
+Thumbs.db
+*~
+
 # Flutter / Dart
 .dart_tool/
 .packages
 build/
-*.iml
-*.ipr
-*.iws
-.idea/
-.vscode/
 *.log
 *.tmp
 *.temp
 *.swp
+ephemeral/
 
 # Android
 android/.gradle/
 android/local.properties
 android/captures/
-android/build/
-android/app/release/
-android/app/debug/
-android/*.iml
+.android/
+.embarcadero/
 
-# iOS
+# iOS / macOS
 ios/.symlinks/
 ios/Flutter/Generated.xcconfig
 ios/Flutter/flutter_export_environment.sh
@@ -31,11 +35,56 @@ ios/Pods/
 ios/Podfile.lock
 ios/Runner.xcworkspace/
 ios/build/
+ios/.dart_tool/
+macos/Flutter/Generated.xcconfig
+macos/Flutter/ephemeral/
+macos/Flutter/Flutter-Generated.xcconfig
+macos/build/
+macos/Flutter/ephemeral/
+Pods/
+Podfile.lock
 
 # Web
 web/build/
 web/local/
 
+# Windows
+windows/
+windows/CMakeSettings.json
+windows/.dart_tool/
+windows/runner/Debug/
+windows/runner/Release/
+windows/runner/x64/
+windows/runner/x86/
+windows/runner/arm64/
+
 # Linux
 linux/.dart_tool/
+linux/build/
+linux/flutter/ephemeral/
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugins.cmake
+linux/build/
 
+# Secretos
+.env
+.env.*
+server/.env
+server/motorsocial-mailer/.env
+server/pruebamotorsocial-mailer/.env
+server/**/.env
+
+# Locks y artefactos
+pubspec.lock
+.analysis_options.*
+coverage/
+*.gcno
+*.gcda
+*.gcov
+lcov.info
+htmlcov/
+
+# Node / server
+node_modules/
+package-lock.json
+.npm/
