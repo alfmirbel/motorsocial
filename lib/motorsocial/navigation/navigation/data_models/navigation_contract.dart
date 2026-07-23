@@ -1,0 +1,3 @@
+class NavigationContract {
+  const NavigationContract();
+}

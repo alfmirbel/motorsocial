@@ -1,0 +1,3 @@
+class MediaContract {
+  const MediaContract();
+}
