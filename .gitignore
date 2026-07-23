@@ -1,6 +1,41 @@
-# Hermes Auto-generated Gitignore
-.DS_Store
-*.log
+# Flutter / Dart
 .dart_tool/
 .packages
 build/
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+*.log
+*.tmp
+*.temp
+*.swp
+
+# Android
+android/.gradle/
+android/local.properties
+android/captures/
+android/build/
+android/app/release/
+android/app/debug/
+android/*.iml
+
+# iOS
+ios/.symlinks/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/App.framework
+ios/Flutter/engine/
+ios/Pods/
+ios/Podfile.lock
+ios/Runner.xcworkspace/
+ios/build/
+
+# Web
+web/build/
+web/local/
+
+# Linux
+linux/.dart_tool/
+
