@@ -1,41 +1,61 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pruebamotorsocial/motorsocial/navigation/navigation.dart';
-import 'package:pruebamotorsocial/core/app_shell.dart';
+
+import 'core/app_shell.dart';
+import 'core/config/social_app_config.dart';
+import 'core/motorsocial_bridge/bridge.dart';
+import 'core/database/database_module.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const ProviderScope(child: MotorSocialApp()));
+  final config = SocialAppConfig.defaults();
+  final databaseModule = DatabaseModule.local();
+  runApp(
+    ProviderScope(
+      overrides: [
+        motorSocialBridgeProvider.overrideWithValue(createMotorSocialBridge(
+            config: config, databaseModule: databaseModule)),
+      ],
+      child: const SocialAppRoot(),
+    ),
+  );
 }
 
-class MotorSocialApp extends ConsumerWidget {
-  const MotorSocialApp({super.key});
+class SocialAppRoot extends ConsumerWidget {
+  const SocialAppRoot({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final bridge = ref.read(motorSocialBridgeProvider);
+    final config = bridge.config;
+    final uiMode =
+        config.themeId.contains('dark') ? ThemeMode.dark : ThemeMode.system;
+    const seed = Color(0xFF415AA9);
     return MaterialApp(
-      title: 'MotorSocial',
-      themeMode: ThemeMode.system,
+      title: config.appName,
+      themeMode: uiMode,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF415AA9)),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: seed, brightness: Brightness.light),
         useMaterial3: true,
       ),
       darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color(0xFF415AA9), brightness: Brightness.dark),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: seed, brightness: Brightness.dark),
         useMaterial3: true,
       ),
-      initialRoute: '/catalog',
-      routes: {
-        '/catalog': (_) => const SocialScaffold(body: CatalogPage()),
-        '/home': (_) => const SocialScaffold(body: HomePage()),
-        '/feed': (_) => const SocialScaffold(body: FeedPage()),
-        '/chat': (_) => const SocialScaffold(body: ChatPage()),
-        '/account': (_) => const SocialScaffold(body: AccountPage()),
-        '/profile': (_) => const SocialScaffold(body: ProfilePage()),
-        '/login': (_) => const LoginPage(),
-      },
-      onGenerateRoute: AppRouter.routeFor,
+      home: const _BootstrapPlaceholder(),
+    );
+  }
+}
+
+class _BootstrapPlaceholder extends StatelessWidget {
+  const _BootstrapPlaceholder();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: MainShell(),
     );
   }
 }
