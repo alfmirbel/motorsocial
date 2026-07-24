@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pruebamotorsocial/motorsocial/security/repositories/security_repository.dart';
+import '../repositories/security_repository.dart';
 
 class SecurityNotifier extends Notifier<void> {
   SecurityNotifier(this.securityRepository);
