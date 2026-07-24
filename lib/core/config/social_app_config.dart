@@ -49,6 +49,21 @@ class SocialAppConfig {
     );
   }
 
+  factory SocialAppConfig.defaults() => const SocialAppConfig(
+        appName: 'MotorSocial',
+        themeId: 'light_default',
+        identity: <String, dynamic>{},
+        navigation: <String, dynamic>{},
+        location: <String, dynamic>{},
+        catalog: <String, dynamic>{},
+        media: <String, dynamic>{},
+        activity: <String, dynamic>{},
+        modules: <String>[],
+        useStubRepositories: true,
+        couchdb: null,
+        qdrant: null,
+      );
+
   Map<String, dynamic> toJson() => {
         'appName': appName,
         'themeId': themeId,
