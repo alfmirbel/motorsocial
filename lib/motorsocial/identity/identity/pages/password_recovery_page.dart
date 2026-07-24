@@ -16,7 +16,9 @@ class PasswordRecoveryPage extends ConsumerWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            TextField(controller: emailController, decoration: const InputDecoration(labelText: 'Email')),
+            TextField(
+                controller: emailController,
+                decoration: const InputDecoration(labelText: 'Email')),
             const SizedBox(height: 16),
             ValueListenableBuilder<bool>(
               valueListenable: isSaving,
@@ -31,7 +33,9 @@ class PasswordRecoveryPage extends ConsumerWidget {
                           if (context.mounted) {
                             isSaving.value = false;
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('Si el email existe, recibirás instrucciones.')),
+                              const SnackBar(
+                                  content: Text(
+                                      'Si el email existe, recibirás instrucciones.')),
                             );
                           }
                         },

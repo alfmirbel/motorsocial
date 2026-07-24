@@ -16,7 +16,8 @@ class PostalCodeRepositoryImpl implements PostalCodeRepository {
   Future<PostalCodeLookupResult> lookup(String postalCode) async {
     final response = await http.get(Uri.parse('$baseUri/$postalCode'));
     if (response.statusCode == 200) {
-      return PostalCodeLookupResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+      return PostalCodeLookupResult.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>);
     }
     throw Exception('Error al buscar CP');
   }

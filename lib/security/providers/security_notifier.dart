@@ -9,4 +9,5 @@ class SecurityNotifier extends Notifier<void> {
   void build() {}
 }
 
-final securityNotifierProvider = Provider<SecurityNotifier>((ref) => SecurityNotifier(ref.read(securityRepositoryProvider)));
+final securityNotifierProvider = Provider<SecurityNotifier>(
+    (ref) => SecurityNotifier(ref.read(securityRepositoryProvider)));

@@ -10,17 +10,28 @@ class AppRouter {
   static Route<dynamic> routeFor(String name) {
     switch (name) {
       case home:
-        return MaterialPageRoute(builder: (_) => const _PlaceholderPage(title: 'Home', routeName: home));
+        return MaterialPageRoute(
+            builder: (_) =>
+                const _PlaceholderPage(title: 'Home', routeName: home));
       case login:
-        return MaterialPageRoute(builder: (_) => const _PlaceholderPage(title: 'Login', routeName: login));
+        return MaterialPageRoute(
+            builder: (_) =>
+                const _PlaceholderPage(title: 'Login', routeName: login));
       case catalog:
-        return MaterialPageRoute(builder: (_) => const _PlaceholderPage(title: 'Catálogo', routeName: catalog));
+        return MaterialPageRoute(
+            builder: (_) =>
+                const _PlaceholderPage(title: 'Catálogo', routeName: catalog));
       case feed:
-        return MaterialPageRoute(builder: (_) => const _PlaceholderPage(title: 'Feed', routeName: feed));
+        return MaterialPageRoute(
+            builder: (_) =>
+                const _PlaceholderPage(title: 'Feed', routeName: feed));
       case profile:
-        return MaterialPageRoute(builder: (_) => const _PlaceholderPage(title: 'Perfil', routeName: profile));
+        return MaterialPageRoute(
+            builder: (_) =>
+                const _PlaceholderPage(title: 'Perfil', routeName: profile));
       default:
-        return MaterialPageRoute(builder: (_) => _NotFoundPage(routeName: name));
+        return MaterialPageRoute(
+            builder: (_) => _NotFoundPage(routeName: name));
     }
   }
 

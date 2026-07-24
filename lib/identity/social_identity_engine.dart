@@ -1,4 +1,3 @@
-
 class SocialIdentityEngine {
   const SocialIdentityEngine();
 

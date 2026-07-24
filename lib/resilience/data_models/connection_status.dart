@@ -4,7 +4,8 @@ class ConnectionStatus {
 
   const ConnectionStatus({this.isOnline = false, this.connectivityType});
 
-  factory ConnectionStatus.fromJson(Map<String, dynamic> json) => ConnectionStatus(
+  factory ConnectionStatus.fromJson(Map<String, dynamic> json) =>
+      ConnectionStatus(
         isOnline: json['isOnline'] as bool? ?? false,
         connectivityType: json['connectivityType'] as String?,
       );

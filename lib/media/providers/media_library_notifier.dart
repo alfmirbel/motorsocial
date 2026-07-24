@@ -4,7 +4,8 @@ class MediaLibraryState {
   final List<String> mediaIds;
   const MediaLibraryState({this.mediaIds = const <String>[]});
 
-  MediaLibraryState copyWith({List<String>? mediaIds}) => MediaLibraryState(mediaIds: mediaIds ?? this.mediaIds);
+  MediaLibraryState copyWith({List<String>? mediaIds}) =>
+      MediaLibraryState(mediaIds: mediaIds ?? this.mediaIds);
 }
 
 class MediaLibraryNotifier extends Notifier<MediaLibraryState> {
@@ -12,4 +13,6 @@ class MediaLibraryNotifier extends Notifier<MediaLibraryState> {
   MediaLibraryState build() => const MediaLibraryState();
 }
 
-final mediaLibraryProvider = NotifierProvider<MediaLibraryNotifier, MediaLibraryState>(MediaLibraryNotifier.new);
+final mediaLibraryProvider =
+    NotifierProvider<MediaLibraryNotifier, MediaLibraryState>(
+        MediaLibraryNotifier.new);

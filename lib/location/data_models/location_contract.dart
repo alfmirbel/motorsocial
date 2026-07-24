@@ -9,7 +9,8 @@ class LocationContract {
     this.defaultLocalityLimit = 20,
   });
 
-  factory LocationContract.fromJson(Map<String, dynamic> json) => LocationContract(
+  factory LocationContract.fromJson(Map<String, dynamic> json) =>
+      LocationContract(
         enableGeolocation: json['enableGeolocation'] as bool? ?? true,
         enablePostalCode: json['enablePostalCode'] as bool? ?? true,
         defaultLocalityLimit: (json['defaultLocalityLimit'] as int?) ?? 20,
@@ -49,7 +50,8 @@ class PostalCodeLookupResult {
     this.localities = const <LocalityEntry>[],
   });
 
-  factory PostalCodeLookupResult.fromJson(Map<String, dynamic> json) => PostalCodeLookupResult(
+  factory PostalCodeLookupResult.fromJson(Map<String, dynamic> json) =>
+      PostalCodeLookupResult(
         postalCode: json['postalCode'] as String? ?? '',
         localities: (json['localities'] as List<dynamic>? ?? const <dynamic>[])
             .whereType<Map<String, dynamic>>()

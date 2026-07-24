@@ -21,7 +21,9 @@ class CatalogListPage extends ConsumerWidget {
               itemCount: page.items.length,
               itemBuilder: (context, index) {
                 final item = page.items[index];
-                return ListTile(title: Text(item.title ?? item.type), subtitle: Text(item.id));
+                return ListTile(
+                    title: Text(item.title ?? item.type),
+                    subtitle: Text(item.id));
               },
             ),
     );
@@ -32,7 +34,8 @@ class ObjectDetailPage extends ConsumerWidget {
   final String objectId;
   final String objectType;
 
-  const ObjectDetailPage({super.key, required this.objectId, required this.objectType});
+  const ObjectDetailPage(
+      {super.key, required this.objectId, required this.objectType});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

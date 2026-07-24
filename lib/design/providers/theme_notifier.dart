@@ -5,4 +5,5 @@ class ThemeNotifier extends Notifier<void> {
   void build() {}
 }
 
-final themeNotifierProvider = NotifierProvider<ThemeNotifier, void>(ThemeNotifier.new);
+final themeNotifierProvider =
+    NotifierProvider<ThemeNotifier, void>(ThemeNotifier.new);

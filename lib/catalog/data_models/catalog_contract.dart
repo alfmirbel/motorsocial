@@ -15,9 +15,12 @@ class CatalogContract {
     this.primaryCtaLabel = 'Contactar',
   });
 
-  factory CatalogContract.fromJson(Map<String, dynamic> json) => CatalogContract(
+  factory CatalogContract.fromJson(Map<String, dynamic> json) =>
+      CatalogContract(
         providerName: json['providerName'] as String? ?? '',
-        supportedTypes: (json['supportedTypes'] as List<dynamic>? ?? const []).whereType<String>().toList(),
+        supportedTypes: (json['supportedTypes'] as List<dynamic>? ?? const [])
+            .whereType<String>()
+            .toList(),
         defaultPageSize: (json['defaultPageSize'] as int?) ?? 20,
         enableSearch: json['enableSearch'] as bool? ?? true,
         enablePdfExport: json['enablePdfExport'] as bool? ?? false,

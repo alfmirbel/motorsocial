@@ -17,14 +17,22 @@ class RegisterPage extends ConsumerWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            TextField(controller: identifierController, decoration: const InputDecoration(labelText: 'Email')),
-            TextField(controller: secretController, decoration: const InputDecoration(labelText: 'Password'), obscureText: true),
-            TextField(controller: displayNameController, decoration: const InputDecoration(labelText: 'Nombre')),
+            TextField(
+                controller: identifierController,
+                decoration: const InputDecoration(labelText: 'Email')),
+            TextField(
+                controller: secretController,
+                decoration: const InputDecoration(labelText: 'Password'),
+                obscureText: true),
+            TextField(
+                controller: displayNameController,
+                decoration: const InputDecoration(labelText: 'Nombre')),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () async {
                 final repo = ref.read(authRepositoryProvider);
-                final state = await repo.register(identifierController.text, secretController.text, displayNameController.text);
+                final state = await repo.register(identifierController.text,
+                    secretController.text, displayNameController.text);
                 if (state.isAuthenticated && context.mounted) {
                   Navigator.of(context).pushReplacementNamed(AppRouter.home);
                 }

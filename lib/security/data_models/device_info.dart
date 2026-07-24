@@ -40,8 +40,13 @@ class SecurityEvent {
         id: json['id'] as String? ?? json['_id'] as String? ?? '',
         type: json['type'] as String? ?? 'unknown',
         actorId: json['actorId'] as String?,
-        payload: Map<String, dynamic>.from(json['payload'] is Map<String, dynamic> ? json['payload'] as Map<String, dynamic> : <String, dynamic>{}),
-        createdAt: json['createdAt'] != null ? DateTime.parse(json['createdAt'] as String) : DateTime.now(),
+        payload: Map<String, dynamic>.from(
+            json['payload'] is Map<String, dynamic>
+                ? json['payload'] as Map<String, dynamic>
+                : <String, dynamic>{}),
+        createdAt: json['createdAt'] != null
+            ? DateTime.parse(json['createdAt'] as String)
+            : DateTime.now(),
       );
 }
 

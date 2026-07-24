@@ -21,7 +21,8 @@ class MotorSocialApp extends ConsumerWidget {
         useMaterial3: true,
       ),
       darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF415AA9), brightness: Brightness.dark),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF415AA9), brightness: Brightness.dark),
         useMaterial3: true,
       ),
       initialRoute: '/catalog',

@@ -5,4 +5,5 @@ class SessionNotifier extends Notifier<void> {
   void build() {}
 }
 
-final sessionNotifierProvider = NotifierProvider<SessionNotifier, void>(SessionNotifier.new);
+final sessionNotifierProvider =
+    NotifierProvider<SessionNotifier, void>(SessionNotifier.new);

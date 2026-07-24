@@ -7,7 +7,11 @@ abstract class MediaRepository {
 }
 
 class InMemoryMediaRepository implements MediaRepository {
-  @override Future<List<SocialMediaAsset>> byOwner(String ownerId) async => const <SocialMediaAsset>[];
-  @override Future<SocialMediaAsset> upload(SocialMediaAsset asset) async => asset;
-  @override Future<void> delete(String id) async {}
+  @override
+  Future<List<SocialMediaAsset>> byOwner(String ownerId) async =>
+      const <SocialMediaAsset>[];
+  @override
+  Future<SocialMediaAsset> upload(SocialMediaAsset asset) async => asset;
+  @override
+  Future<void> delete(String id) async {}
 }

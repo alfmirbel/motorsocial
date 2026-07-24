@@ -6,4 +6,6 @@ class ObjectDetailNotifier extends Notifier<AsyncValue<SocialObject?>> {
   AsyncValue<SocialObject?> build() => const AsyncValue.data(null);
 }
 
-final objectDetailProvider = NotifierProvider<ObjectDetailNotifier, AsyncValue<SocialObject?>>(ObjectDetailNotifier.new);
+final objectDetailProvider =
+    NotifierProvider<ObjectDetailNotifier, AsyncValue<SocialObject?>>(
+        ObjectDetailNotifier.new);

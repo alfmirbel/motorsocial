@@ -5,4 +5,5 @@ class InvitationNotifier extends Notifier<void> {
   void build() {}
 }
 
-final invitationNotifierProvider = NotifierProvider<InvitationNotifier, void>(InvitationNotifier.new);
+final invitationNotifierProvider =
+    NotifierProvider<InvitationNotifier, void>(InvitationNotifier.new);

@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 
 class GroupViews {
   static const String contacts = 'contactos';

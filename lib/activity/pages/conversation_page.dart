@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 class ConversationPage extends ConsumerStatefulWidget {
   final String chatKey;
   const ConversationPage({super.key, required this.chatKey});
@@ -27,7 +26,8 @@ class _ConversationPageState extends ConsumerState<ConversationPage> {
                 Expanded(
                   child: TextField(
                     controller: _controller,
-                    decoration: const InputDecoration(hintText: 'Escribe un mensaje'),
+                    decoration:
+                        const InputDecoration(hintText: 'Escribe un mensaje'),
                   ),
                 ),
                 IconButton(

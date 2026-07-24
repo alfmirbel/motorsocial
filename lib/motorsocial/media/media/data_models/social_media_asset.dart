@@ -4,6 +4,10 @@ class SocialMediaAsset {
   final String assetType;
   final String url;
   final DateTime createdAt;
-  const SocialMediaAsset({required this.id, required this.ownerId, required this.assetType, required this.url, required this.createdAt});
+  const SocialMediaAsset(
+      {required this.id,
+      required this.ownerId,
+      required this.assetType,
+      required this.url,
+      required this.createdAt});
 }
-

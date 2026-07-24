@@ -13,11 +13,14 @@ class SocialRelationship {
     required this.createdAt,
   });
 
-  factory SocialRelationship.fromJson(Map<String, dynamic> json) => SocialRelationship(
+  factory SocialRelationship.fromJson(Map<String, dynamic> json) =>
+      SocialRelationship(
         id: json['id'] as String? ?? json['_id'] as String? ?? '',
         actorId: json['actorId'] as String? ?? '',
         targetId: json['targetId'] as String? ?? '',
         type: json['type'] as String? ?? 'contact',
-        createdAt: json['createdAt'] != null ? DateTime.parse(json['createdAt'] as String) : DateTime.now(),
+        createdAt: json['createdAt'] != null
+            ? DateTime.parse(json['createdAt'] as String)
+            : DateTime.now(),
       );
 }

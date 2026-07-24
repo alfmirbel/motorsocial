@@ -47,4 +47,5 @@ class FeedNotifier extends Notifier<FeedState> {
   }
 }
 
-final feedProvider = NotifierProvider<FeedNotifier, FeedState>(FeedNotifier.new);
+final feedProvider =
+    NotifierProvider<FeedNotifier, FeedState>(FeedNotifier.new);

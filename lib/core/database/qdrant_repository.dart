@@ -1,4 +1,3 @@
-
 class QdrantRecord {
   final String id;
   final Map<String, dynamic> payload;

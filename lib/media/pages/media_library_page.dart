@@ -11,7 +11,9 @@ class MediaLibraryPage extends ConsumerWidget {
     final ids = ref.watch(mediaLibraryProvider).mediaIds;
     return Scaffold(
       appBar: AppBar(title: const Text('Biblioteca')),
-      body: ListView.builder(itemCount: ids.length, itemBuilder: (context, index) => ListTile(title: Text(ids[index]))),
+      body: ListView.builder(
+          itemCount: ids.length,
+          itemBuilder: (context, index) => ListTile(title: Text(ids[index]))),
     );
   }
 }

@@ -27,8 +27,10 @@ class SocialObject {
               : <String, dynamic>{},
         ),
         ownerId: json['ownerId'] as String?,
-        createdAt: DateTime.tryParse(json['createdAt'] as String? ?? '') ?? DateTime.now(),
-        updatedAt: DateTime.tryParse(json['updatedAt'] as String? ?? '') ?? DateTime.now(),
+        createdAt: DateTime.tryParse(json['createdAt'] as String? ?? '') ??
+            DateTime.now(),
+        updatedAt: DateTime.tryParse(json['updatedAt'] as String? ?? '') ??
+            DateTime.now(),
       );
 
   Map<String, dynamic> toJson() => <String, dynamic>{
@@ -55,7 +57,8 @@ class SocialObjectPage {
     this.hasMore = false,
   });
 
-  factory SocialObjectPage.fromJson(Map<String, dynamic> json) => SocialObjectPage(
+  factory SocialObjectPage.fromJson(Map<String, dynamic> json) =>
+      SocialObjectPage(
         items: (json['items'] as List<dynamic>? ?? const <dynamic>[])
             .whereType<Map<String, dynamic>>()
             .map(SocialObject.fromJson)

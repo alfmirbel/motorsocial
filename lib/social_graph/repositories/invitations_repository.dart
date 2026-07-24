@@ -6,6 +6,9 @@ abstract class InvitationsRepository {
 }
 
 class InMemoryInvitationsRepository implements InvitationsRepository {
-  @override Future<List<SocialInvitation>> pendingFor(String receiverId) async => const <SocialInvitation>[];
-  @override Future<void> send(SocialInvitation invitation) async {}
+  @override
+  Future<List<SocialInvitation>> pendingFor(String receiverId) async =>
+      const <SocialInvitation>[];
+  @override
+  Future<void> send(SocialInvitation invitation) async {}
 }

@@ -7,7 +7,9 @@ class TabMenuState {
   const TabMenuState({required this.items, required this.selectedIndex});
 
   TabMenuState copyWith({List<SocialMenuItem>? items, int? selectedIndex}) {
-    return TabMenuState(items: items ?? this.items, selectedIndex: selectedIndex ?? this.selectedIndex);
+    return TabMenuState(
+        items: items ?? this.items,
+        selectedIndex: selectedIndex ?? this.selectedIndex);
   }
 }
 
@@ -24,12 +26,14 @@ class TabMenuNotifier extends StateNotifier<TabMenuState> {
     if (index < 0 || index >= state.items.length) return;
     final old = state.items[index];
     final items = List<SocialMenuItem>.from(state.items);
-    items[index] = SocialMenuItem(title: old.title, route: old.route, enabled: enabled);
+    items[index] =
+        SocialMenuItem(title: old.title, route: old.route, enabled: enabled);
     state = state.copyWith(items: items);
   }
 
   SocialMenuItem selected() => state.items[state.selectedIndex];
-  List<SocialMenuItem> get enabledItems => state.items.where((item) => item.enabled).toList();
+  List<SocialMenuItem> get enabledItems =>
+      state.items.where((item) => item.enabled).toList();
 }
 
 final activeRouteProvider = StateProvider<String>((_) => '/');

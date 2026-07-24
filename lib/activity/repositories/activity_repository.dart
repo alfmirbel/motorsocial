@@ -9,10 +9,16 @@ abstract class ActivityRepository {
 }
 
 class InMemoryActivitiesRepository implements ActivityRepository {
-  @override Future<List<SocialActivity>> recentFeed(ActivityQuery query) async => const <SocialActivity>[];
-  @override Future<SocialActivity?> getById(String id) async => null;
-  @override Future<SocialActivity> create(SocialActivity activity) async => activity;
-  @override Future<void> delete(String id) async {}
+  @override
+  Future<List<SocialActivity>> recentFeed(ActivityQuery query) async =>
+      const <SocialActivity>[];
+  @override
+  Future<SocialActivity?> getById(String id) async => null;
+  @override
+  Future<SocialActivity> create(SocialActivity activity) async => activity;
+  @override
+  Future<void> delete(String id) async {}
 }
 
-final activityRepositoryProvider = Provider<ActivityRepository>((ref) => InMemoryActivitiesRepository());
+final activityRepositoryProvider =
+    Provider<ActivityRepository>((ref) => InMemoryActivitiesRepository());

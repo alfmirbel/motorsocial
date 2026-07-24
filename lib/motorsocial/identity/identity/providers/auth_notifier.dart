@@ -5,4 +5,5 @@ class AuthNotifier extends Notifier<void> {
   void build() {}
 }
 
-final authNotifierProvider = NotifierProvider<AuthNotifier, void>(AuthNotifier.new);
+final authNotifierProvider =
+    NotifierProvider<AuthNotifier, void>(AuthNotifier.new);

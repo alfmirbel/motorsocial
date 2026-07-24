@@ -7,7 +7,10 @@ class LocationState {
   const LocationState({this.locality = '', this.isLoading = false, this.error});
 
   LocationState copyWith({String? locality, bool? isLoading, String? error}) {
-    return LocationState(locality: locality ?? this.locality, isLoading: isLoading ?? this.isLoading, error: error ?? this.error);
+    return LocationState(
+        locality: locality ?? this.locality,
+        isLoading: isLoading ?? this.isLoading,
+        error: error ?? this.error);
   }
 }
 
@@ -16,4 +19,5 @@ class LocationNotifier extends Notifier<LocationState> {
   LocationState build() => const LocationState();
 }
 
-final locationProvider = NotifierProvider<LocationNotifier, LocationState>(LocationNotifier.new);
+final locationProvider =
+    NotifierProvider<LocationNotifier, LocationState>(LocationNotifier.new);

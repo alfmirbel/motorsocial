@@ -1,4 +1,3 @@
-
 class ActivityQuery {
   final String? actorId;
   final int limit;

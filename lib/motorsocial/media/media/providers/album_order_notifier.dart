@@ -4,7 +4,8 @@ class AlbumOrderState {
   final int order;
   const AlbumOrderState({this.order = 0});
 
-  AlbumOrderState copyWith({int? order}) => AlbumOrderState(order: order ?? this.order);
+  AlbumOrderState copyWith({int? order}) =>
+      AlbumOrderState(order: order ?? this.order);
 }
 
 class AlbumOrderNotifier extends Notifier<AlbumOrderState> {
@@ -12,4 +13,6 @@ class AlbumOrderNotifier extends Notifier<AlbumOrderState> {
   AlbumOrderState build() => const AlbumOrderState();
 }
 
-final albumOrderProvider = NotifierProvider<AlbumOrderNotifier, AlbumOrderState>(AlbumOrderNotifier.new);
+final albumOrderProvider =
+    NotifierProvider<AlbumOrderNotifier, AlbumOrderState>(
+        AlbumOrderNotifier.new);

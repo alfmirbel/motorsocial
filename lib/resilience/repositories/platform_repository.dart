@@ -5,7 +5,9 @@ abstract class PlatformRepository {
 }
 
 class StubPlatformRepository implements PlatformRepository {
-  @override Future<String> current() async => 'unknown';
+  @override
+  Future<String> current() async => 'unknown';
 }
 
-final platformRepositoryProvider = Provider<PlatformRepository>((ref) => StubPlatformRepository());
+final platformRepositoryProvider =
+    Provider<PlatformRepository>((ref) => StubPlatformRepository());

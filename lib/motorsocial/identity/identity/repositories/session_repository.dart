@@ -31,4 +31,5 @@ class StubSessionRepository implements SessionRepository {
   Future<void> clear() async => _session.clear();
 }
 
-final sessionRepositoryProvider = Provider<SessionRepository>((ref) => StubSessionRepository());
+final sessionRepositoryProvider =
+    Provider<SessionRepository>((ref) => StubSessionRepository());

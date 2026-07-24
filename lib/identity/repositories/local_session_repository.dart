@@ -9,4 +9,5 @@ class LocalSessionRepository {
   Future<void> clear() async {}
 }
 
-final localSessionRepositoryProvider = Provider<LocalSessionRepository>((ref) => const LocalSessionRepository());
+final localSessionRepositoryProvider =
+    Provider<LocalSessionRepository>((ref) => const LocalSessionRepository());

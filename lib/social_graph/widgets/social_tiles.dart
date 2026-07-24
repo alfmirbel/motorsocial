@@ -10,7 +10,9 @@ class SocialRelationshipTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(title: Text('Relación ${relationship.type}'), subtitle: Text(relationship.targetId));
+    return ListTile(
+        title: Text('Relación ${relationship.type}'),
+        subtitle: Text(relationship.targetId));
   }
 }
 
@@ -20,7 +22,9 @@ class SocialGroupTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(title: Text(group.name), subtitle: Text('${group.memberIds.length} miembros'));
+    return ListTile(
+        title: Text(group.name),
+        subtitle: Text('${group.memberIds.length} miembros'));
   }
 }
 
@@ -30,6 +34,8 @@ class InvitationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(title: Text('Invitación ${invitation.status}'), subtitle: Text(invitation.senderId));
+    return ListTile(
+        title: Text('Invitación ${invitation.status}'),
+        subtitle: Text(invitation.senderId));
   }
 }

@@ -5,5 +5,8 @@ abstract class CatalogRepository {
 }
 
 class InMemoryCatalogRepository implements CatalogRepository {
-  @override Future<List<SocialObjectQuery>> search(String query, {int limit = 20}) async => const <SocialObjectQuery>[];
+  @override
+  Future<List<SocialObjectQuery>> search(String query,
+          {int limit = 20}) async =>
+      const <SocialObjectQuery>[];
 }

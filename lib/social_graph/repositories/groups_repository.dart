@@ -5,5 +5,8 @@ abstract class GroupsRepository {
 }
 
 class InMemoryGroupsRepository implements GroupsRepository {
-  @override Future<List<SocialGroup>> discoverable({bool? visibility, bool? joinable}) async => const <SocialGroup>[];
+  @override
+  Future<List<SocialGroup>> discoverable(
+          {bool? visibility, bool? joinable}) async =>
+      const <SocialGroup>[];
 }

@@ -1,4 +1,3 @@
-
 class Invitation {
   final String id;
   final String senderId;
@@ -19,6 +18,8 @@ class Invitation {
         senderId: json['senderId'] as String? ?? '',
         recipientId: json['recipientId'] as String? ?? '',
         status: json['status'] as String? ?? 'pending',
-        createdAt: json['createdAt'] != null ? DateTime.parse(json['createdAt'] as String) : DateTime.now(),
+        createdAt: json['createdAt'] != null
+            ? DateTime.parse(json['createdAt'] as String)
+            : DateTime.now(),
       );
 }
