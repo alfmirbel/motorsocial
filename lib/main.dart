@@ -1,43 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'core/config/social_app_config.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final config = SocialAppConfig.defaults();
-  runApp(
-    ProviderScope(
-      child: MotorSocialApp(config: config),
-    ),
-  );
+  runApp(const MotorSocialApp());
 }
 
-class MotorSocialApp extends ConsumerWidget {
-  const MotorSocialApp({super.key, required this.config});
-  final SocialAppConfig config;
+class MotorSocialApp extends StatelessWidget {
+  const MotorSocialApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final uiMode =
-        config.themeId.contains('dark') ? ThemeMode.dark : ThemeMode.system;
-    const seed = Color(0xFF415AA9);
+  Widget build(BuildContext context) {
     return MaterialApp(
-      title: config.appName,
-      themeMode: uiMode,
-      theme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: seed, brightness: Brightness.light),
-        useMaterial3: true,
-      ),
-      darkTheme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: seed, brightness: Brightness.dark),
-        useMaterial3: true,
-      ),
+      title: 'MotorSocial',
+      theme: ThemeData(useMaterial3: true),
       home: Scaffold(
         body: Center(
-          child: Text(config.appName),
+          child: ElevatedButton(
+            onPressed: () {},
+            child: const Text('MotorSocial'),
+          ),
         ),
       ),
     );
