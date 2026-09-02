@@ -1,0 +1,40 @@
+# build.yaml — Configuración global de build_runner para MotorSocial
+# Genera: .freezed.dart, .g.dart (json_serializable), riverpod providers
+
+targets:
+  $default:
+    builders:
+      # ── Freezed ────────────────────────────────────────────────────────────
+      freezed:
+        generate_for:
+          include:
+            - lib/**/*.dart
+        options:
+          # No generar constructores privados automáticamente
+          private_constructors: false
+          # copy_with generado
+          copy_with: true
+          # Igualdad y toString automáticos
+          equal: true
+          # Colecciones inmutables
+          make_collections_unmodifiable: true
+
+      # ── json_serializable ─────────────────────────────────────────────────
+      json_serializable:
+        generate_for:
+          include:
+            - lib/**/*.dart
+        options:
+          # No usar checked mode (lanza en runtime)
+          checked: false
+          # Generar toJson recursivo para List/Map
+          explicit_to_json: true
+          # NOTA: include_if_null dejado en default (true) — si se pone false,
+          # json_serializable 6.8 emite `?expr` (null-aware-elements, Dart 3.7+)
+          # que el analyzer de build_runner actual no admite.
+
+      # ── riverpod_generator ───────────────────────────────────────────────
+      riverpod_generator:
+        generate_for:
+          include:
+            - lib/**/*.dart

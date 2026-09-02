@@ -9,11 +9,29 @@ on:
 jobs:
   flutter-ci:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-      - run: flutter pub get
-      - run: flutter analyze
-      - run: dart format --set-exit-if-changed .
+          cache: true
+
+      # Configura defines para que String.fromEnvironment se resuelvan durante
+      # analyze/test (sin credenciales reales; placeholders válidos para CI).
+      - name: Create defines.json for CI
+        run: |
+          echo '{"COUCHDB_PASSWORD":"ci-placeholder","GOOGLE_MAPS_API_KEY":"ci-placeholder"}' > defines.json
+
+      - name: Resolve dependencies
+        run: flutter pub get
+
+      - name: Verify formatting
+        run: dart format --set-exit-if-changed .
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test --dart-define-from-file=defines.json

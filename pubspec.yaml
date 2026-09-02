@@ -4,25 +4,48 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.0 <4.0.0'
+  sdk: '>=3.4.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
   cupertino_icons: ^1.0.8
 
-  flutter_riverpod: ^2.4.9
-  connectivity_plus: ^5.0.2
+  # State management — Riverpod 3.x (NotifierProvider syntax ya usada en código)
+  flutter_riverpod: ^3.0.0
+  riverpod: ^3.0.0
+
+  # Networking — Dio con retry inteligente
+  dio: ^5.4.0
+  dio_smart_retry: ^5.0.0
+
+  # Almacenamiento — fallback por plataforma: FlutterSecureStorage (móvil) + SharedPreferences (web/windows)
+  flutter_secure_storage: ^9.0.0
   shared_preferences: ^2.2.2
-  meta: ^1.10.0
-  uuid: ^4.0.0
-  http: ^1.2.0
+
+  # Utilidades
+  connectivity_plus: ^5.0.2
+  meta: ^1.11.0
+  uuid: ^4.3.0
   location: ^5.0.3
+  # Freezed annotation como dependencia directa (usada en lib/**/*.dart)
+  freezed_annotation: ^3.0.0
+  # JSON annotation como dependencia directa (usada en lib/**/*.dart)
+  json_annotation: ^4.8.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^4.0.0
+
+  # Generación de código — Freezed, JSON, Riverpod
+  build_runner: ^2.4.7
+  riverpod_generator: ^3.0.0
+  freezed: ^3.0.0
+  json_serializable: ^6.8.0
+  http_mock_adapter: ^0.6.1
 
 flutter:
   uses-material-design: true

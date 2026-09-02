@@ -12,10 +12,12 @@ flutter run -d windows              --dart-define-from-file=defines.json   # Win
 flutter run                        --dart-define-from-file=defines.json   # Android/iOS
 flutter build web --wasm            --dart-define-from-file=defines.json   # Web prod
 flutter analyze                                                             # Lint
+flutter test                                                                # All tests
+dart run build_runner build --delete-conflicting-outputs                    # Codegen (Freezed/Riverpod)
 ```
 
 - **Always** `--wasm` for web. Web build without it is wrong.
-- `defines.json` (in `.gitignore`) has CouchDB creds + Google Maps keys. Access via `String.fromEnvironment()` in `lib/14_geolocalizacion/app_keys.dart` and `lib/40_security/direccionip.dart`.
+- `defines.json` (in `.gitignore`) has CouchDB creds + Google Maps keys. Access via `const String.fromEnvironment('COUCHDB_PASSWORD')` / `const String.fromEnvironment('GOOGLE_MAPS_API_KEY')` wherever needed.
 - `.env` is legacy. Do not use it for secrets.
 
 ## Architecture
@@ -30,10 +32,10 @@ Flutter App → CouchDB (https://citigov.cloud:6984)
 
 ## State management & data layer
 
-- **Riverpod 3.x** with `riverpod_generator` — run `build_runner` after adding/editing providers with annotations.
-- **Freezed** + `json_serializable` for models. Generated files: `.freezed.dart`, `.g.dart`.
-- **Dio** for HTTP with JWT interceptor (auto-attaches token from secure storage).
-- JWT storage: `flutter_secure_storage` on iOS/Android, `shared_preferences` on Web/Windows.
+- **Riverpod 3.x** with `riverpod_generator` — run `build_runner` after adding/editing providers with annotations. Manual `Notifier`/`NotifierProvider` syntax is also valid (see `lib/core/providers/app_providers.dart`, `lib/navigation/providers/tab_menu_notifier.dart`).
+- **Freezed** + `json_serializable** for models — **status: migration in progress.** Generated files `.freezed.dart`/`.g.dart` are NOT yet active because the project uses the Flutter `master` channel (Dart 3.14 dev), whose `analyzer` is incompatible with the `mixin class` syntax that Freezed 3 emits. To enable Freezed: switch to `stable` channel (Dart 3.7+), then annotate models and run `build_runner`. Existing models are manual Dart classes (`copyWith`, `fromJson`/`toJson`).
+- **Dio** for HTTP with JWT interceptor (auto-attaches token). See `lib/core/database/dio_client.dart` (`JwtInterceptor`, `TokenStorage` with platform-aware fallback) and `lib/core/providers/dio_provider.dart` (`dioProvider`).
+- JWT storage: `flutter_secure_storage` on iOS/Android, `shared_preferences` on Web/Windows. Resolved via `defaultTokenStorage(SharedPreferences)`.
 
 ### Code generation
 
@@ -45,17 +47,19 @@ Run after editing Freezed models or Riverpod provider annotations.
 
 ## Navigation
 
-- Custom `AppRoutes.routeGenerate()` as `onGenerateRoute` in MaterialApp (`lib/core_backend_services/07_routes/app_routes.dart`).
-- Route params via `routes_parameters.dart`. **No GoRouter**, no Navigator 2.0.
-- `setPathUrlStrategy()` active in `main.dart` — clean URLs on Web.
+- `AppRouter.routeGenerate(RouteSettings)` used as `onGenerateRoute` in `MaterialApp` (`lib/navigation/routing/app_router.dart`).
+- Routes via name (`Navigator.pushReplacementNamed`); **No GoRouter**, no Navigator 2.0, no `routes_parameters.dart`.
+- Access guard: `RouteGuard.canAccess()` in `lib/navigation/routing/route_guard.dart` reads `sessionProvider` from the nearest `ProviderScope`.
+- `usePathUrlStrategy()` active in `lib/main.dart` — clean URLs on Web (Flutter API renamed from old `setPathUrlStrategy()`).
 
 ## Critical code rules
 
 1. **`if (!mounted) return;`** — required after **every `await`** in StatefulWidget code that updates UI.
-2. **No hardcoded colors** — always use the global `appTheme` ColorScheme from `lib/core_backend_services/20_var_globales/var_color_themes.dart`. Read `_documentacion/antigravity_ui_rules.md` before any UI work.
-3. M3 widgets: `NavigationBar` (not `BottomNavigationBar`), `FilledButton` (not `RaisedButton`).
+2. **No hardcoded colors** — always use the global `appTheme` `ColorScheme` from `lib/core/theme/app_theme.dart` (access via `Theme.of(context).colorScheme`). Read `_documentacion/antigravity_ui_rules.md` before any UI work.
+3. M3 widgets: `NavigationBar` (not `BottomNavigationBar`), `FilledButton` (not `ElevatedButton` / `RaisedButton`).
 4. Icon codepoints must be in range `0xe000`–`0xe900` — avoid `_outlined` variants in `0xee00+`.
 5. Views are dumb — no business logic in widgets. Use Riverpod notifiers.
+6. Split `lib/` by feature module (`identity`, `catalog`, `activity`, `social_graph`, `media`, `design`, `navigation`, `resilience`, `location`, `features`). Don't reintroduce the old `lib/core_backend_services/` or duplicated `lib/motorsocial/` / `lib/catalog/catalog/` trees.
 
 ## SSH (server 190.92.151.34:7822)
 
@@ -73,7 +77,9 @@ Run after editing Freezed models or Riverpod provider annotations.
 
 ## Tests
 
-- One smoke test exists at `test/widget_test.dart`. Run with `flutter test`.
+- Unit tests: `test/unit/**` (e.g. `activity_repository_test.dart`, `sync_repository_test.dart`).
+- Widget tests: `test/widget/**` (e.g. `login_page_test.dart`).
+- Run all with `flutter test`; CI runs `flutter analyze` + `flutter test --dart-define-from-file=defines.json` (workflow `.github/workflows/ci.yml`).
 - No integration test infrastructure.
 
 ## Reference docs (in-repo)
@@ -126,4 +132,4 @@ ssh-add $env:USERPROFILE\.ssh\id_ed25519
 
 - **URL**: https://citigov.cloud:6984
 - **Usuario**: admin
-- **Password**: (en .env como COUCHDB_PASSWORD — nunca en este archivo)
+- **Password**: (en `defines.json` como `COUCHDB_PASSWORD` — nunca en este archivo; añadido a `.gitignore`).

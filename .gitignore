@@ -73,6 +73,8 @@ server/.env
 server/motorsocial-mailer/.env
 server/pruebamotorsocial-mailer/.env
 server/**/.env
+# Compile-time defines (CouchDB password, Google Maps key)
+defines.json
 
 # Locks y artefactos
 pubspec.lock
